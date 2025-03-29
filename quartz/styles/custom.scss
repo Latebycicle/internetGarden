@@ -1,3 +1,28 @@
+// Import base styles with @use
 @use "./base.scss";
 
-// put your custom CSS here!
+// Custom font settings for Instrument Serif and Space Grotesk
+:root {
+  --headerFont: "Instrument Serif", serif;
+  --bodyFont: "Space Grotesk", sans-serif;
+}
+
+// Additional custom styling for fonts
+body {
+  font-family: var(--bodyFont);
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--headerFont);
+}
+
+.article-title {
+  font-family: var(--headerFont);
+  font-weight: 400;
+}
+
+.page-title {
+  font-family: var(--headerFont);
+  font-weight: 400;
+}
