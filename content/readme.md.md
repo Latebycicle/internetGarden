@@ -1,1 +1,0 @@
-This is the readme of my website (Not the whole project)
