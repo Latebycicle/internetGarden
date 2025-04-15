@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+.npm
+package-lock.json
+
+
+# Build output
+dist/
+.vitepress/dist/
+.vitepress/cache/
+.vitepress/.temp/
+
+# Editor directories and files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+.history/
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Operating System Files
+Thumbs.db
+.directory
+Desktop.ini
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Cache and temporary files
+.cache/
+.temp/
+.tmp/
+tmp/
+temp/
+
