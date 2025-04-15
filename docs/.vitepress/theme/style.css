@@ -75,6 +75,10 @@
   --vp-c-danger-soft: var(--vp-c-red-soft);
 }
 
+.dark {
+  --vp-c-text-1: #ffffff;
+}
+
 /**
  * Typography
  * -------------------------------------------------------------------------- */
@@ -274,7 +278,7 @@ h2::after {
 
 :root {
   --vp-c-bg: #ffffff;
-  --vp-c-bg-alt: #f5f5f5;
+  --vp-c-bg-alt: #ffffff;
   --vp-c-bg-elv: #ffffff;
   --vp-c-bg-soft: #f6f6f7;
 
@@ -285,8 +289,8 @@ h2::after {
 }
 
 .dark {
-  --vp-c-bg: rgb(10, 10, 10);
-  --vp-c-bg-alt: #000000;
+  --vp-c-bg: rgb(0,0,0);
+  --vp-c-bg-alt: rgb(0,0,0);
   --vp-c-bg-elv: #202127;
   --vp-c-bg-soft: #202127;
 
@@ -299,5 +303,24 @@ h2::after {
 .VPSidebar {
   background-color: var(--vp-c-bg-alt) !important;
   /* border-right: 0.01em solid rgb(212, 212, 212) !important; */
+}
+
+
+@media (min-width: 760px) {
+  .blog-search {
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nav-search-btn-wait {
+    border: #202127 0.01em solid !important;
+    max-width: auto !important;
+    width: 60%;
+  }
+  .nav-search-btn-wait:hover {
+    border: #202127 0.1em solid !important;
+    max-width: auto !important;
+    width: 60%;
+  }
 }
 

@@ -5,6 +5,7 @@ import DefaultTheme from 'vitepress/theme'
 import './style.css'
 import Layout from './Layout.vue'
 import Tags from '../components/Tags.vue'
+import Heroani from '../components/Heroani.vue'
 
 export default {
   extends: DefaultTheme,
@@ -15,6 +16,7 @@ export default {
   },
   enhanceApp({ app, router, siteData }) {
     app.component('Tags', Tags)
+    app.component('Heroani', Heroani)
     // ...
   }
 } satisfies Theme

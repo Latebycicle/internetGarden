@@ -32,25 +32,25 @@ const readingTime = computed(() => {
 </template>
 <style scoped>
 .timetagscontainer {
-  display: flex; /* Arrange children in a row */
-  align-items: center; /* Vertically align items in the middle */
-  gap: 10px; /* Add some space between the reading time and the tags */
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
   height: 2em;
-  line-height: 2em; /* Align text vertically */
+  line-height: 2em;
   padding-bottom: 0.8em;
   padding-left: 0.5em;
 }
 
 .reading-time {
-  margin: 0; /* Remove default margin from h5 */
-  font-weight: normal; /* Optional: Adjust font weight */
-  font-size: 0.9em; /* Optional: Adjust font size */
-  color: var(--vp-c-text-2); /* Use theme's secondary text color */
+  margin: 0;
+  font-weight: normal; 
+  font-size: 0.9em; 
+  color: var(--vp-c-text-2); 
 }
 
 .tags-list {
-    display: flex; /* Arrange tags in a row */
-    flex-wrap: wrap; /* Allow tags to wrap to the next line if needed */
+    display: flex; 
+    flex-wrap: wrap; 
     padding-top: 0.2em;
 }
 

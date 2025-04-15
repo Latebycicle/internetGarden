@@ -10,26 +10,26 @@ export default defineConfig({
     
   },
   title: "Akhil Ramchand",
-  description: "An internet garden where i write about things that are important to me and belive must be shared with the world",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Home', link: '/index' },
     ],
 
     sidebar: [
       {
-        text: '<p class=\'sidebarheading\' > Examples </p>',
+        text: '<p class=\'sidebarheading\' > Posts </p>',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'Art Of Visual Storytelling', link: '/artofvisualstorytelling' },
         ]
       }
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/Latebycicle/' },
+      { icon: 'linkedin', link: 'https://www.linkedin.com/in/akhil-ramchand/' },
+      { icon: 'instagram', link: 'https://www.instagram.com/latebycicle/' },
+      { icon: 'gmail', link: 'https://mail.google.com/mail/?view=cm&to=Latebyciclenz@gmail.com' }
     ]
   }
 })
