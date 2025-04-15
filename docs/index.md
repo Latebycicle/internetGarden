@@ -21,3 +21,7 @@ features:
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
+<br>
+<h1 class="text-3xl font-bold underline">
+    Hello world!
+  </h1>

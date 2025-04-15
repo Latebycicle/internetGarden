@@ -1,10 +1,13 @@
 import { defineConfig } from 'vitepress'
 import { pagefindPlugin } from 'vitepress-plugin-pagefind'
+import tailwindcss from '@tailwindcss/vite'
+import Components from 'unplugin-vue-components/vite'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   vite: {
-    plugins: [pagefindPlugin()],
+    plugins: [pagefindPlugin(),tailwindcss(),Components()],
+    
   },
   title: "Akhil Ramchand",
   description: "An internet garden where i write about things that are important to me and belive must be shared with the world",

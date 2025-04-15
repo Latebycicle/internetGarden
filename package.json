@@ -5,6 +5,7 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.4",
     "pagefind": "^1.3.0",
     "vitepress": "^1.6.3",
     "vitepress-plugin-pagefind": "^0.4.13",
@@ -18,5 +19,11 @@
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.4",
+    "unplugin-vue-components": "^28.5.0"
+  }
 }
