@@ -1,7 +1,8 @@
 # Dependencies
-node_modules/
+/node_modules
 .npm
 package-lock.json
+/docs/.obsidian
 
 
 # Build output
@@ -18,7 +19,7 @@ dist/
 *.njsproj
 *.sln
 *.sw?
-.DS_Store
+/docs/.DS_Store
 .history/
 *.log
 
