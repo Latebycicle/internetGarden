@@ -34,13 +34,13 @@ This information is a design perspective built upon the underlying [Gestalt Prin
 
 Symmetry contributes to maintaining visual heirarchy. Having multiple elements on the same row after center-aligned text will lead to a breakdown in visual hierarchy and confusion. 
 
-![](badcolcposter.png)
+![](./public/badcolcposter.png)
 
 This initial draft of a poster for my project's poster is a good example. Visual hierarchy is maintained for the first two lines. Following that, Due to the Caps Online Learning Center text being Left aligned and having the same precedence as the QR code, It breaks down the visual hierarchy and leaves the audience a little confused. 
 
 Maintaining Symmetry (Top Left vs Bottom Right), Emphasizing the main message and aligning the text to compliment the QR code lends some much-needed relief to the poster. 
 
-![](bettercolc.png)
+![](./public/bettercolc.png)
 
  Separating/Grouping elements into distinct blocks of information or creating negative space between groups of elements lends relief and re-establishes visual hierarchy. 
 

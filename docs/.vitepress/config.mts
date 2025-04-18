@@ -9,6 +9,11 @@ export default defineConfig({
     plugins: [pagefindPlugin(),tailwindcss(),Components()],
     
   },
+  appearance: {
+    // @ts-expect-error not fully supported yet
+    initialValue: 'light'
+  },
+  base: '/',
   title: "Akhil Ramchand",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
