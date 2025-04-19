@@ -44,6 +44,7 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://akhilr.tech', 
   },
+  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
 
   // Add transformPageData for SEO meta tags
   transformPageData(pageData, { siteConfig }) {
