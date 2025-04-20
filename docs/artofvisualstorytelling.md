@@ -6,6 +6,7 @@ wc: 1136
 title: The Art Of Visual Storytelling
 ---
 
+# The Art Of Visual Storytelling
 <Tags :tags="$frontmatter.tags" :wc="$frontmatter.wc" />
 <img src='/The Art of Visual Storytelling.png'> <br>
 *I recently attended a poster design workshop at Bangalore International Centre called The Art of Visual Storytelling, conducted as part of the Maps Of Memory exhibition, and here's what I learnt!*
