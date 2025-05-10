@@ -30,6 +30,7 @@ export default defineConfig({
         text: '<p class=\'sidebarheading\' > Posts </p>',
         items: [
           { text: 'Art Of Visual Storytelling', link: '/artofvisualstorytelling' },
+          { text: 'Knowledge Distillation', link: '/KnowledgeDistillation' },
         ]
       }
     ],
