@@ -38,26 +38,32 @@ const readingTime = computed(() => {
 </template>
 <style scoped>
 .timetagscontainer {
-  display: flex; 
-  align-items: center; 
-  gap: 10px; 
-  height: 2em;
-  line-height: 2em;
-  padding-bottom: 0.8em;
+  font-size: 0.8em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  line-height: 0em;
+  grid-gap: 0px 2px;
+  padding-bottom: 0em;
   padding-left: 0.5em;
 }
 
-.reading-time {
+.readingTime {
   margin: 0;
-  font-weight: normal; 
-  font-size: 0.9em; 
-  color: var(--vp-c-text-2); 
+  font-weight: normal;  
+  min-width: fit-content;
 }
 
 .tags-list {
-    display: flex; 
-    flex-wrap: wrap; 
-    padding-top: 0.2em;
+    display: flex;
+    width: fit-content;
+    line-height: 2em;
+    padding-top: 0.3em;
 }
 
+.separator {
+  margin: 0 5px;
+  color: #888;
+}
 </style>

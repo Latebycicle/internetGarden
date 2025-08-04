@@ -2,7 +2,7 @@
 outline: deep
 lastUpdated: 8/5/2025
 tags: [AI/ML, XAI, Psychology]
-wc: 2107
+wc: 2400
 title: "Metacognition: The basis of good AI Interaction"
 --- 
 # Metacognition: The basis of good AI Interaction
@@ -60,6 +60,8 @@ This results in a very uniquely human issue while prompting -
 In most other domains, we constantly receive a stream of rich feedback from the environment that lets us judge the effectiveness of our actions. In social learning environments, facial expressions, verbal confirmations, error messages, follow-up questions, and collaborative refinement help us gauge the effectiveness of our communication, and this immediate feedback allows us to update our mental models and adapt to the situation or tool that we're using. 
 
 <img src='/xkcd.png'>
+
+<center> Credits: XKCD [<a href="#ref-8">8</a>] </center>
 
 Human-AI interaction lacks immediate and transparent feedback on the effectiveness of prompts. The prompting interface of generative AI systems at this point doesn't provide any indication of key feedback metrics such as *quality of the prompt, indication of whether the prompt was optimally structured, whether important context was missing, or whether alternative formulations might yield superior results*. 
 
@@ -153,6 +155,8 @@ Ultimately, becoming an expert AI collaborator is less about mastering a particu
 <a id="ref-6"></a>[6] Advait Sarkar, Andrew D. Gordon, Carina Negreanu, Christian Poelitz, Sruti Srinivasa Ragavan, and Ben Zorn. 2022. What is it like to program with artificial intelligence? https://doi.org/10.48550/arXiv.2208.06213 arXiv:2208.06213 [cs].
 
 <a id="ref-7"></a>[7] Design Lab. 2017. What does it mean to be literate in the Age of Google? | Dan Russell | Design@Large. https://www.youtube.com/watch?v=SgOBrYOttZg
+
+<a id="ref-8"></a>[8] About, “Machine learning,” Xkcd. https://xkcd.com/1838/
 
 
 
