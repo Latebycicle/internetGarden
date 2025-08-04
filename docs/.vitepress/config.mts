@@ -31,6 +31,7 @@ export default defineConfig({
         items: [
           { text: 'Art Of Visual Storytelling', link: '/artofvisualstorytelling' },
           { text: 'Knowledge Distillation', link: '/KnowledgeDistillation' },
+          { text: 'Metacognition: The basis of good AI Interaction', link: '/Metacognition' }
         ]
       }
     ],

@@ -1,6 +1,6 @@
 ---
 outline: deep
-lastUpdated: true
+lastUpdated: 4/19/2025
 tags: [design, workshop]
 wc: 1136
 title: The Art Of Visual Storytelling

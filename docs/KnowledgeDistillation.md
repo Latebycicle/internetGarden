@@ -1,6 +1,6 @@
 ---
 outline: deep
-lastUpdated: true
+lastUpdated: 5/10/2025
 tags: [AI/ML]
 wc: 700
 title: Knowledge Distillation

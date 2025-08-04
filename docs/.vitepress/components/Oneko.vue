@@ -19,7 +19,23 @@ let idleAnimation = null;
 // Current frame in the idle animation sequence
 let idleAnimationFrame = 0;
 // Whether the cat is forced to sleep (toggled by double-click)
-let forceSleep = false;
+let forceSleep = true;
+
+// Track if the toast has been shown in the current sleep session
+let toastShown = false;
+
+// Toast state
+const showToast = ref(false);
+const toastMessage = ref('');
+
+// Show toast helper
+function showSimpleToast(message) {
+  toastMessage.value = message;
+  showToast.value = true;
+  setTimeout(() => {
+    showToast.value = false;
+  }, 2000);
+}
 // Whether the cat is currently being dragged
 let grabbing = false;
 // Whether the grab movement has stopped
@@ -291,11 +307,18 @@ function handleMouseMove(e) {
 /**
  * Handle mouse down event to allow dragging the cat
  * Only responds to left mouse button (button 0)
+ * Also shows a toast on first tap if in forced sleep
  */
 function handleMouseDown(e) {
   // Prevent default behavior to avoid text selection while dragging
   e.preventDefault();
-  
+
+  // Show toast on first tap if in forced sleep
+  if (forceSleep && !toastShown) {
+    showSimpleToast('Double tap to wake');
+    toastShown = true;
+  }
+
   if (e.button !== 0) return;
   grabbing = true;
   let startX = e.clientX;
@@ -335,7 +358,7 @@ function handleMouseDown(e) {
     // Update cat position based on mouse movement
     nekoPosX = startNekoX + e.clientX - startX;
     nekoPosY = startNekoY + e.clientY - startY;
-    
+
     // Apply position to the DOM element
     if (nekoEl.value) {
       nekoEl.value.style.left = `${nekoPosX - 16}px`;
@@ -364,7 +387,10 @@ function handleMouseDown(e) {
 function handleDblClick() {
   forceSleep = !forceSleep;
   nudge = false;
-  
+  // Reset toast flag when entering sleep again
+  if (forceSleep) {
+    toastShown = false;
+  }
   // Reset animation when waking up
   if (!forceSleep) {
     resetIdleAnimation();
@@ -416,6 +442,8 @@ onBeforeUnmount(() => {
     @dblclick="handleDblClick"
     @contextmenu.prevent
   />
+  <!-- Simple Toast Notification -->
+  <div v-if="showToast" class="oneko-toast">{{ toastMessage }}</div>
 </template>
 
 <style scoped>
@@ -436,5 +464,29 @@ onBeforeUnmount(() => {
   image-rendering: pixelated;
   z-index: 99;
   cursor: pointer;
+}
+
+/* Simple Toast Styling */
+.oneko-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 60px;
+  transform: translateX(-50%);
+  background: rgba(30, 30, 30, 0.95);
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  pointer-events: none;
+  animation: fadeinout 2s;
+}
+
+@keyframes fadeinout {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
 }
 </style>

@@ -7,6 +7,7 @@ import './style.css'
 import Tags from '../components/Tags.vue'
 import Heroani from '../components/Heroani.vue'
 import Oneko from '../components/Oneko.vue'
+import card from '../components/card.vue'
 
 export default {
   extends: DefaultTheme,
@@ -18,7 +19,7 @@ export default {
   enhanceApp({ app, router, siteData }) {
     app.component('Tags', Tags)
     app.component('Heroani', Heroani)
-    // app.component('Oneko', Oneko) // Remove component registration
+    app.component('Card', card)
 
     // Mount Oneko globally on the client side
     if (typeof window !== 'undefined') { // Check if running in browser
