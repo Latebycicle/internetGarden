@@ -8,7 +8,7 @@ title: "Metacognition: The basis of good AI Interaction"
 # Metacognition: The basis of good AI Interaction
 <Tags :tags="$frontmatter.tags" :wc="$frontmatter.wc" />
 
-Generative AI is the latest tool in the average person's toolbelt, and it's the biggest step forward since Google Search, and, as with all systems and tools, there are prerequisites and skills required to make effective use of it. 
+Generative AI is the newest addition to the average person’s toolkit and marks the biggest leap forward since Google Search. As with any system or tool, using it effectively requires certain prerequisites and skills.
 
 ### What is metacognition?
 Generative AI systems and their probabilistic outputs require *metacognative skills* - the ability to monitor and control your own thought process and behaviour. 
