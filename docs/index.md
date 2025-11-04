@@ -21,40 +21,9 @@ layout: home
     <a href="https://github.com/Latebycicle/" target="_blank" class="summit-btn brand">
       💻 See My Work on GitHub
     </a>
-    <button onclick="shareProfile()" class="summit-btn share">
-      🔗 Share Profile
-    </button>
+    <ShareButton />
   </div>
 </div>
-
-<script>
-function shareProfile() {
-  const shareData = {
-    title: 'Akhil Ramchand - AI/ML Engineer',
-    text: 'Hey! Check out this interesting profile I came across at the Bangalore Skill Summit - an AI/ML engineer with a psychology background!',
-    url: 'https://akhilr.tech'
-  };
-
-  // Check if Web Share API is supported (works on mobile)
-  if (navigator.share) {
-    navigator.share(shareData)
-      .catch((err) => {
-        // If user cancels, do nothing
-        if (err.name !== 'AbortError') {
-          console.log('Error sharing:', err);
-        }
-      });
-  } else {
-    // Fallback: copy link to clipboard
-    navigator.clipboard.writeText('https://akhilr.tech').then(() => {
-      alert('Link copied to clipboard! Share it anywhere you like.');
-    }).catch(() => {
-      // If clipboard fails, show the link
-      prompt('Share this link:', 'https://akhilr.tech');
-    });
-  }
-}
-</script>
 
 <div class="divider"></div>
 
@@ -155,20 +124,6 @@ I believe in making **simple**, **efficient** and **elegant** software solutions
 }
 
 .summit-btn.brand:hover {
-  background-color: var(--vp-c-brand-1);
-  color: var(--vp-button-brand-text);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.summit-btn.share {
-  background-color: var(--vp-c-bg-soft);
-  color: var(--vp-c-brand-1);
-  border: 2px solid var(--vp-c-brand-1);
-  cursor: pointer;
-}
-
-.summit-btn.share:hover {
   background-color: var(--vp-c-brand-1);
   color: var(--vp-button-brand-text);
   transform: translateY(-2px);

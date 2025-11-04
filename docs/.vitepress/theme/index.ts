@@ -8,6 +8,7 @@ import Tags from '../components/Tags.vue'
 import Heroani from '../components/Heroani.vue'
 import Oneko from '../components/Oneko.vue'
 import card from '../components/card.vue'
+import ShareButton from '../components/ShareButton.vue'
 
 export default {
   extends: DefaultTheme,
@@ -20,6 +21,7 @@ export default {
     app.component('Tags', Tags)
     app.component('Heroani', Heroani)
     app.component('Card', card)
+    app.component('ShareButton', ShareButton)
 
     // Mount Oneko globally on the client side
     if (typeof window !== 'undefined') { // Check if running in browser
