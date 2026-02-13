@@ -1,0 +1,300 @@
+A Neural Network Model of the Past Tense
+
+The circle with the 1 is called the bias term.
+A bias input is a constant input (usually set to 1) that lets a perceptron shift its decision boundary independently of
+the data.
+w_0 is also labled as w_b ; b for bias.
+The sum calculates the weighted sum
+y={
+
+1
+0
+
+if w0 + w1 x1 > 0
+otherwise
+​
+
+​
+
+y={
+
+1
+0
+
+​
+
+​
+
+if ∑ wi xi > 0
+otherwise
+​
+
+​
+
+​
+
+​
+
+If Z= sum of w_i x_i (weighted sum)
+y={
+
+1
+0
+
+if Z > 0
+otherwise
+
+​
+
+​
+
+Example
+w_0 = 3
+w_1 = 2
+y={
+
+1
+0
+
+if 3 + 2.x1 > 0
+else
+​
+
+​
+
+​
+
+Solving for x_1:
+3 + 2.x1 > 0
+​
+
+2x1 > −3
+​
+
+Divide by 2 on both sides:
+x1 > −
+​
+
+A Neural Network Model of the Past Tense
+
+3
+2
+
+​
+
+1
+
+Binary decision boundary in 1D
+
+^^Binary means that y can only be 0 or 1
+
+Given a specific set of weights, a perceptron defines exactly ONE decision boundary.
+
+Given a specific decision boundary, how many possible sets of weights could we use?
+
+If the signs weer flipped.
+
+**When moving a multiplication/division term to the other side of an inequality sign, the sign needs to be flipped.
+
+In 2 dimensions
+
+Let:
+w_0 = -1
+w_1 = 2
+w_2 = 1
+y={
+
+A Neural Network Model of the Past Tense
+
+1
+0
+
+if − 1 + 2.x1 + 1.x2 > 0
+else
+​
+
+​
+
+​
+
+​
+
+2
+
+Done by isolating the x_2 term
+
+A perceptron with n inputs and (n+1) weights defines a decision boundary in an n-dimensional space. This decision
+boundary (db) is linear.
+If it’s 1D: db is a point
+If it's 2D: db is a line
+If it’s 3D: db is a plane
+If it’s higher D: db is a hyperplane.
+
+Learning
+What if we have some observations of x and y (data), and we want to find a good set of weights for the perceptron?
+Let:
+
+Two data points
+
+Q: Is there an automated procedure for finding a good set of weights?
+A: Yes. There is an iterative procedure- Changing the weights step by step until the perceptron does what we want.
+
+Weight update rule
+w
+ˉt+1 = w
+ˉt + △w
+ˉ
+​
+
+​
+
+(t+1)=time //steps in an iterative process
+The Ws are vectors since it applies to all weights.
+
+The step function is the activation step of a perceptron
+
+A Neural Network Model of the Past Tense
+
+3
+
+w
+ˉnew = w
+ˉold + △w
+ˉ
+​
+
+​
+
+So what should △w be?
+i.e. How do we pick a △ on the weights that will take the weights in the right direction?
+
+STEP 1: Start with a random perceptron
+Let w_0 = 3 and w_1 = 2
+Check if this is correct given our data’
+Data
+
+x_1
+
+y_true [true
+output
+notation]
+
+Perceptron w_0 Perceptron w_1
+
+Z (w_0+w_1.x_1) y predicted
+
+Accuracy
+
+A
+
+1
+
+0
+
+3
+
+2
+
+5
+
+1
+
+Wrong
+
+B
+
+5
+
+1
+
+3
+
+2
+
+13
+
+1
+
+Right
+
+error = ytrue − ypredicted
+​
+
+​
+
+How to tweak the weights to make it ‘less wrong’?
+If the error is positive, we need to move the threshold to the left.
+If the error is negative, we need to move the threshold to the right.
+Let’s say: (trial rule)
+△wi = error
+​
+
+^^ Adding error to the weights
+
+Added the error repeatedly until desire weight was attained.
+
+^^ is not quite right because it would only work if x_1 was positive
+
+A Neural Network Model of the Past Tense
+
+4
+
+If x_1 was negitive then we need to increase w_1 to make the whole term smaller.
+Let’s say: (alternative rule)
+△wi = (error).(xi )
+​
+
+​
+
+Takes care of the sign of the error.
+Takes care of the sign of the input.
+Takes care of the magnitude of the input
+
+w0 + w1 .x1 > 0
+​
+
+​
+
+​
+
+^^ If x is really big, then the (w_1.x_1) term is contributing quite a lot to the equation hence making small changes in
+weight make no impact.
+
+Let’s say: (alternative rule 2-final)
+Add a “learning rate”
+Learning rate- a constant parameter to scale the size of the weight changes.
+△wi = η.(error).xi
+​
+
+​
+
+△wi = η.(ytrue − ypredicted ).xi
+​
+
+​
+
+​
+
+​
+
+^^ both these equations are the same.
+wnew = wold + △w
+​
+
+​
+
+These equations together are called the perceptron learning rule or perceptron update rule
+
+Properties of the perceptron learning rule
+The perceptron learning rule is guaranteed to converge to a correct solution for any n-dimensional dataset that is
+linearly separable.
+Meaning: you can have a set of data in any number of dimensions, as long as it is possible to slice it with a line or a
+hyperplane. If a correct solution exists, this simple algorithm will find it. Doesn't matter what random perceptron you
+start with, it might take a lot of steps, but it's actually guaranteed to converge, which is a really, really powerful result
+** Only works for linearly seperable data
+
+A Neural Network Model of the Past Tense
+
+5
+
+

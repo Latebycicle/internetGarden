@@ -1,0 +1,42 @@
+Perceptrons to Neural
+Networks (+demo)
+perceptron_demo_in_lecture.xlsx
+^^ Once the error becomes 0, there will be nothing to update in the graph
+XOR-true if one or the other is true but not both.
+
+A single perceptron is powerful
+Can represent any linear decision boundary in n-dimensions
+Using the perceptron learning rule, weights can be automatically
+determined to match any dataset that is linearly separable
+In other words, if it is possible to divide the data, the perceptron
+learning rule is guaranteed to find a solution!
+A perceptron can learn to represent the basic logic gates: AND, OR, NAND,
+NOR
+
+Perceptrons to Neural Networks (+demo)
+
+1
+
+What can be done?
+One idea: Can we change input space to make the data linearly
+separable?
+
+Problem: This is very data-dependent
+
+Different solution
+Use multiple perceptrons
+A neural network is just multiple ”neurons” put together into a giant
+collection
+Each “neuron” is very similar to a perceptron, but with some added features
+
+Puzzle
+
+Perceptrons to Neural Networks (+demo)
+
+2
+
+Perceptrons to Neural Networks (+demo)
+
+3
+
+

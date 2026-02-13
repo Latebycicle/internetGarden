@@ -1,0 +1,297 @@
+Multilayer Perceptrons and
+Backpropagation
+Week Week 3
+
+Example
+There is a bunny that has the following rule:
+If I am hungry enough, then I will go get food
+If A, then B → Computational level of analysis
+^^ is called a classification problem
+Classification problem: finding a mapping between inputs
+(continuous/discrete) to a discrete output.
+If you start asking how the bunny can do this, then it becomes algorithmic
+level.
+Let us say:
+Bunny has :
+x = hunger sensor ∈ R
+y = decision to leave nest to get f ood ∈ {0, 1}
+if x > threshold t then y = 1 else y = 0
+
+t= threshold (here some hunger level)
+If x is > then t, then y = true
+Multilayer Perceptrons and Backpropagation
+
+1
+
+If x<t then y = true
+This point t is called a decision boundary in a 1 dimensional space.
+Decision boundary- Everything to one side is one decision, and the other side
+leads to a different decision.
+Can be done in a 2-dimensional space as well
+Introducing a new variable of temperature: If it's cold outside, then the
+bunny does not want to go outside the nest.
+
+p = some temperature above which is warm enough to go out and below is too
+cold
+
+SO,
+In 1D, the decision boundary would be a point
+In 2D, the decision boundary would be a line
+In 3D, the decision boundary would be a plane.
+Decision boundary is a very powerful concept in AI and CogSci
+It can be in any number of dimensions and can have different shapes
+The above were examples of linear decision boundaries.
+
+Multilayer Perceptrons and Backpropagation
+
+2
+
+A decision boundary is any way to carve up an n-dimensional space of
+inputs into 2 regions (binary decision) or more regions (k-way decisions)
+Binary decisions are usually enough because you can chain together
+many binary decisions to make a more complex decision.
+
+How do we represent a decision boundary in a
+flexible and useful manner?
+
+false=0 and true =1
+
+y={
+
+1
+0
+
+​
+
+if x > t
+if x ⪕ t
+
+​
+
+This diagram is called a perceptron. This diagram is just a representatio of the formula above
+
+x= some hunger level
+t= treshold
+
+Multilayer Perceptrons and Backpropagation
+
+3
+
+Step function intepretation
+
+Perceptron: a mathematical diagram—simple model of a biological neuron
+used in an artificial neural network
+
+Getting rid of the ‘t’ inside the step function
+y={
+y={
+
+1
+0
+
+​
+
+1
+0
+
+​
+
+if x > t
+if x ⪕ t
+
+​
+
+if x > t → x − t = 0
+if x ⪕ t → x − t ⪕ 0
+
+​
+
+^^ Leads to step fn being centered around 0 rather than t
+
+t has been moved outside the step function
+
+Multilayer Perceptrons and Backpropagation
+
+4
+
+the edge (path between the circles) is called the weight.
+Moving the -t out, allows it to be seen as a weight rather than an input.
+The ‘fake’ input 1 allows the threshold to exist outside the step function.
+x also has some weight
+x and 1 here are inputs
+The step function compares the weighted sum of the inputs to the
+threshold.
+
+1D perceptron
+
+x_0 and x_1 are inputs
+w_0 and w_1 are the weights
+x_0 is still representing the threshold value t, and x_1 is the only actual input
+y={
+
+1
+0
+
+​
+
+if x > t → x − t = 0
+if x ⪕ t → x − t ⪕ 0
+
+​
+
+The above equation is converted to:
+Multilayer Perceptrons and Backpropagation
+
+5
+
+y={
+
+1
+0
+
+if w0 x0 + w1 x1 > 0
+if w0 x0 + w1 x1 ⪕ 0
+​
+
+​
+
+​
+
+​
+
+​
+
+​
+
+​
+
+​
+
+​
+
+^^ This is a classical definition of a perceptron
+It is basically a standard form where weighted inputs, a sum and a step
+function can produce a binary decision.
+
+2 Dimensional inputs
+
+The above can be represented as:
+
+y={
+
+1
+0
+
+if w0 + w1 x1 + w2 x2 > 0
+if w0 + w1 x1 + w2 x2 ⪕ 0
+​
+
+​
+
+​
+
+​
+
+​
+
+​
+
+​
+
+​
+
+​
+
+​
+
+​
+
+​
+
+Perceptrons of n dimensions
+Multilayer Perceptrons and Backpropagation
+
+6
+
+If you treat the weights and inputs as vectors, you can calculate the dot product
+y={
+
+w
+ˉ .x
+ˉ>0:y=1
+w
+ˉ .x
+ˉ⪕0:y=0
+
+​
+
+These are both the same:
+w 0 + w 1 x1 + w 2 x2 > 0
+​
+
+​
+
+​
+
+​
+
+​
+
+w
+ˉ .x
+ˉ>0:y=1
+
+** The diagrams could also be written without the sum circle and just the step
+fn circle // just a notation really.
+
+Now suppose:
+We want to infer the rabbit’s threshold t (unknown), but we can observe the
+rabbit’s behaviour
+
+Multilayer Perceptrons and Backpropagation
+
+7
+
+number line of hunger level data points (x)
+
+MAKING UP AN ARBITRARY PERCEPTRON—made up values
+Each data point will have an x value and y value
+For data point B:
+x1
+
+y
+
+1
+
+0
+
+w_0
+
+w_1
+
+Sum (w_i x_i)
+
+compare to 0
+
+y
+
+3
+
+2
+
+5
+
+5>0
+
+1
+
+^^ According to this perceptron, when hunger is at level1, the rabbit should
+leave, which is incorrect.
+There is a procedure you can use to adjust the numbers until you get it right
+by moving the point on the number line.
+
+Multilayer Perceptrons and Backpropagation
+
+8
+
+

@@ -3,12 +3,32 @@ import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 import tailwindcss from '@tailwindcss/vite'
 import Components from 'unplugin-vue-components/vite'
 import { joinURL, withoutTrailingSlash } from 'ufo' // Add ufo imports
+import mathjax3 from 'markdown-it-mathjax3'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  markdown: {
+    config: (md) => {
+      md.use(mathjax3)
+      // Custom TikZ plugin (transforms tikz blocks to <script type="text/tikz">)
+      const defaultFence = md.renderer.rules.fence || function (tokens, idx, options, env, self) {
+        return self.renderToken(tokens, idx, options);
+      };
+
+      md.renderer.rules.fence = (tokens, idx, options, env, self) => {
+        const token = tokens[idx];
+        if (token.info.trim() === 'tikz') {
+          // Encode content to pass safely to Vue component
+          const encoded = encodeURIComponent(token.content);
+          return `<TikZ code="${encoded}" />`;
+        }
+        return defaultFence(tokens, idx, options, env, self);
+      };
+    }
+  },
   vite: {
-    plugins: [pagefindPlugin(),tailwindcss(),Components()],
-    
+    plugins: [pagefindPlugin(), tailwindcss(), Components()],
+
   },
   language: 'en-US',
   appearance: {
@@ -31,7 +51,9 @@ export default defineConfig({
         items: [
           { text: 'Art Of Visual Storytelling', link: '/artofvisualstorytelling' },
           { text: 'Knowledge Distillation', link: '/KnowledgeDistillation' },
-          { text: 'Metacognition: The basis of good AI Interaction', link: '/Metacognition' }
+          { text: 'Metacognition: The basis of good AI Interaction', link: '/Metacognition' },
+          { text: 'Insights on AI and education from the Bengaluru Skill Summit 2025', link: '/AIeducation' },
+          { text: 'Basics of AI', link: '/BasicsofAI' }
         ]
       }
     ],
@@ -44,9 +66,14 @@ export default defineConfig({
     ]
   },
   sitemap: {
-    hostname: 'https://akhilr.tech', 
+    hostname: 'https://akhilr.tech',
   },
-  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,500,700' }],
+    ['link', { rel: 'stylesheet', href: 'https://tikzjax.com/v1/fonts.css' }],
+    ['script', { src: 'https://tikzjax.com/v1/tikzjax.js' }]
+  ],
 
   // Add transformPageData for SEO meta tags
   transformPageData(pageData, { siteConfig }) {

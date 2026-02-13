@@ -1,0 +1,288 @@
+Neurons
+The action potential
+An action potential is a rapid sequence of changes in the voltage across a
+membrane
+Patch clamp experiments- With tiny electrodes (micropipettes filled with
+electrolyte and containing an electrode), we can record electrical activity
+in single neurons.
+The patch-clamp technique utilizes a glass micropipette, which is patched
+onto the cell membrane surface to electrically isolate a small membrane
+area for recording ion channel activity. 9 10 A small suction is applied to the
+back of the pipette, forming a high-resistance seal in the giga-ohm range,
+known as a gigaseal, which ensures that all current flows through the
+pipette without leaking through other membrane regions.
+^^ https://www.instagram.com/acaccavano/reel/CkPRBqMgNVf/
+
+The Action Potential (Spike)
+
+An inward current pulse depolarises the cell membrane.
+When the depolarisation exceeds a threshold, the neuron fires a spike.
+Depolarisation, is an all-or-nothing event that is initiated by the opening of
+sodium ion channels within the plasma membrane. T
+
+Neurons
+
+1
+
+The changes in voltage in the neurons occur due to the opening and
+closing of the cell membrane—called channels.
+Channels are specific to ion species.
+
+An all-or-none electrical event in a neuron.
+A weak stimulus does not produce a weaker spike, but no spike.
+After a spike, the neuron is refractory for a short period and cannot spike
+again.
+The refractory period is a short hyperpolarisation of the membrane
+potential.
+After a spike there is a few milisecond period where the neuron is unable to
+produce futher spikes—this is called refactory period.
+Neurons can produce 40-60 spikes per second.
+
+Anatomy of neurons
+
+Neurons
+
+2
+
+Neurons collect inputs through dendrites and send signals (spikes) to other
+neurons via their axons.
+Cell body-where metabolic activities happen.
+In MS, patients have their myelin sheaths deteriorate.
+
+Anatomical Diversity of Neurons
+Neurons differ markedly in anatomy
+and physiology.
+Dendrites can be extensive, but are
+usually confined to 100s of
+micrometres (µm).
+Axons may transmit signals over
+long distances (up to meters), and
+to multiple targets.
+Communication in axons is fast with
+around 100 m/s.
+A: Pyramidal cell, cortex; B: Purkinje cell,
+cerebellum; C: Motorneuron, spinal cord; D:
+Inferior olivary nucleus cell, E: Leech sensory
+neurons (red: axon, black: dendrites)
+
+A) The most common cell in the cortex.
+B) Have huge dendritic trees.
+
+Neurons
+
+3
+
+Transmission of signals is relatively slower in dendrites compared to axons
+(100ms^-1)—Biologically really fast but technologically too slow
+
+Neuron anatomy across species (Cortex)
+
+Prymidal cells for different species.
+
+Communication between neurons
+Synaptic Transmission between Neurons
+
+https://www.youtube.com/watch?v=WhowH0kb7n0
+
+Neurons
+
+4
+
+A synapse is a specialised contact between axon and dendrite of two
+neurons. A spike causes neurotransmitter release at the synapse, which in
+turn changes the potential of the receiving neuron.
+The strength of a synapse can vary: it depends on amount of transmitter
+released and number of postsynaptic receptors.
+The weight of a synapse may change, and it’s affect is directly proportional
+to the weight.
+Vesicles contain chemicals (neurotransmitters) required for signalling.
+Signalling is a stochastic process—it is not very reliable.
+If you record two events from the same synapse, they will never look
+exactly the same.
+
+Anatomical Diversity of Synapses
+A neuron may receive anywhere between 1 and 100,000 synaptic inputs.
+
+Single axon on single neuron-calyx of held
+
+Excitatory and Inhibitory Synapses
+
+Neurons
+
+5
+
+Synapses can excite (bring closer to spiking threshold), or inhibit the
+receiving neuron.
+Dale’s principle: Each neuron can make only either excitatory or inhibitory
+synapses.
+A neuron typically receives both excitatory and inhibitory inputs.
+An excitatory synapse excites a neuron, so it will increase the membrane
+potential—it will bring it closer to the threshold.
+An inhibitory synapse inhibits the neuron, making it less likely to fire as it
+reduces the membrane potential.
+
+More synapses, better brains?
+
+Neurons
+
+6
+
+Deep learning models (esp. LLMs): 1+ trillion parameters (weights).
+The human brain: 100 trillion synapses (weights).
+In artificial neural networks, the parameters are the strength between the
+artificial neurons.
+
+The brain creates and eliminates synapses
+A typical adult cortical neuron has around 10,000 synapses.
+During early development (synaptogenesis) and beyond, neurons and
+synapses are overproduced and eliminated.
+Cell loss: 25-40% or more (Finlay & Pallas, 1989).
+Collateral/synapse loss: ubiquitous (Purves & Lichtmann, 1980); in primate
+visual cortex alone around 5000 synapses/second are eliminated during
+adolescence (Bourgeois & Rakic, 1993).
+This is called pruning and has been linked to circuit refinement and
+specification.
+
+Two simple neuron models
+1. The McCulloch-Pitts Neuron
+
+Neurons
+
+7
+
+The first formal model of an artificial neuron. It’s a very simplified, binary
+model of how a neuron might work.
+
+The W value are the weight of the inputs recieved by a neuron.
+
+Activity is computed as:
+ni (t + 1) = Θ ∑ Wij nj (t) − µi
+​
+
+​
+
+​
+
+​
+
+​
+
+j
+
+nj(t)n_j(t)nj(t): the state (0 or 1) of input neuron j at time step t
+ni(t+1)n_i(t+1)ni(t+1): the state of neuron i at the next time step
+
+Neurons
+
+8
+
+Threshold function:
+Θ(x) = (1 if x ≤ 0; 0 otherwise)
+
+This neuron has no memory of its past activity.
+The Integrate and Fire Neuron
+
+V (t) = V (t − 1) +
+
+△
+[−Vm (t − 1) + Iext (t)]
+τ
+​
+
+​
+
+​
+
+The term −V(t − 1) makes the voltage decay back toward baseline (a leaky
+integrator).
+
+Neurons
+
+9
+
+∆/τ controls how much the voltage changes per step (Euler update).
+
+Intuition: input pushes V up/down; the leak pulls V back; spikes happen
+when V crosses Vthr.
+V (t) = V (t − 1) +
+
+∆
+[−Vm (t − 1) + Iext (t)]
+τ
+​
+
+​
+
+​
+
+if V (t) > Vthr then Spike and V (t + 1) = Vreset
+​
+
+​
+
+I(t) is the external input from synapses.
+V(t) without input tends towards zero, the resting potential.
+τ is the membrane time constant, determines how fast the potential
+changes (10-40ms).
+V_reset is the reset potential after a spike, usually below the resting
+potential.
+∆ is a parameter that determines the simulation time step (as small as
+
+possible)
+
+V (t) = V (t − 1) +
+
+∆
+[−Vm (t − 1) + Iext (t)]
+τ
+​
+
+​
+
+​
+
+if V (t) > Vthr then Spike and V (t + 1) = Vreset
+​
+
+​
+
+This neuron integrates its past activation and hence has some memory
+(τ=10-20 ms).
+
+Neurons
+
+10
+
+V (t) = V (t − 1) +
+
+∆
+[−Vm (t − 1) + Iext (t)]
+τ
+​
+
+​
+
+​
+
+if V (t) > Vthr then Spike and V (t + 1) = Vreset
+​
+
+​
+
+Fluctuations in the input current I_ext(t) lead to irregular spiking.
+
+Summary
+Neurons transmit information through spikes: electrical all-or-non events.
+Synapses mediate communication between neurons through chemical
+neurotransmitters.
+Synapses have either an excitatory or inhibitory effect.
+Synapses have different strength or weight, which quantifies their influence
+on the receiving neuron.
+We can use highly simplified neuron models to investigate neural
+computations.
+
+Neurons
+
+11
+
+

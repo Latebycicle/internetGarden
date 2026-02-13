@@ -9,6 +9,10 @@ import Heroani from '../components/Heroani.vue'
 import Oneko from '../components/Oneko.vue'
 import card from '../components/card.vue'
 import ShareButton from '../components/ShareButton.vue'
+import PerceptronDemo from '../components/PerceptronDemo.vue'
+import XORDemo from '../components/XORDemo.vue'
+import GradientDescentDemo from '../components/GradientDescentDemo.vue'
+import TikZ from '../components/TikZ.vue'
 
 export default {
   extends: DefaultTheme,
@@ -22,6 +26,10 @@ export default {
     app.component('Heroani', Heroani)
     app.component('Card', card)
     app.component('ShareButton', ShareButton)
+    app.component('PerceptronDemo', PerceptronDemo)
+    app.component('XORDemo', XORDemo)
+    app.component('GradientDescentDemo', GradientDescentDemo)
+    app.component('TikZ', TikZ)
 
     // Mount Oneko globally on the client side
     if (typeof window !== 'undefined') { // Check if running in browser

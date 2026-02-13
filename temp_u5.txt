@@ -1,0 +1,249 @@
+Neural networks
+Week Week 4
+Perception is a small computing unit that can take small inputs and make
+predictions.
+Decision boundary represents the threshold at which the model switches
+its prediction from one class to another.
+
+Supervised learning
+A branch of machine learning (different from unsupervised learning,
+reinforcement learning, etc etc.)
+Also one type of learning that humans do, kindof (maybe)
+Supervised Learning:
+Construct a decision boundary using a set of data points where you
+know the inputs and the true output
+This is also called “classification” - dividing data points into distinct
+classes
+Can also have “regression” - learn a continuous function, not just a
+boundary
+Supervised learning always has two parts:
+1. A way to represent a decision boundary of some shape – “hypothesis
+space”
+E.g, a perceptron is a way to represent a decision boundary.
+The hypothesis space for a perceptron is the set of all possible
+lines/planes in n dimensions
+
+Neural networks
+
+1
+
+2. A way to define/adjust a specific boundary to fit some data points –
+“learning”
+Perceptron learning rule- method of tweaking the weights to get a desired
+line.
+
+Examples of Supervised Learning Methods
+A way to represent a DB + how to adjust the DB based on data
+A perceptron is a linear decision boundary
+Perceptron learning rule is a way to set weights to match a set of data
+A multi-layer perceptron (MLP) is a type of neural network that can
+represent a non-linear decision boundary
+Need a slightly different learning rule to set weights
+A neural network is a more general term that includes MLPs and also
+networks with fancier neurons
+Backpropagation is one of the most common learning rules for NNs
+i.e Neural networks is a way to represent a function and
+backpropagation is like an updation rule.
+A decision tree is a different kind of decision boundary altogether! Not a
+neural network at all. Represents complex logical functions.
+There is a decision tree learning rule called ID3 that takes a bunch of
+data points and constructs a decision tree from it
+
+What is the goal of supervised learning?
+If we already know the inputs and true output for our data, why bother with
+all this decision boundary business?
+Generalization: Learn from one set of data (training data), and be able to
+apply the same decision boundary to make decisions about new data
+points never seen before
+Make decision = apply label = classify = predict (same terms)
+
+Neural networks
+
+2
+
+Overfitting – learning a decision boundary that overly matches the training
+data but does not generalize well
+Essentially, it is too specific.
+
+Examples of supervised learning
+1. Look at pictures of venomous snakes to learn which ones to avoid in the
+wild
+Training data: Photos of individual snakes
+Generalisation: New individual snakes never seen, but the same species
+Overfitting: perfectly able to classify pictures you’ve seen but unable to
+determine new snakes.
+2. Learn to recognise letters of the alphabet
+Training data: Particular fonts, handwriting, illustrations
+Generalisation: New fonts, handwriting, never before seen
+AI struggles with OCR (optical character recognition)
+3. Predict what consumers will buy from your shopping website
+Training data: Past consumers, how they browsed, what they bought
+Generalisation: New website visitors
+^^ commercial applications of supervised learning
+4. Decide if an MRI scan shows evidence of a tumour or not
+Training data: Scans from a bunch of patients and their diagnoses
+Generalisation: Scans from new patients
+Many uses, both scientific and commercial/application-oriented
+
+Neural networks
+
+3
+
+What are “Features” in supervised learning?
+The inputs = features
+Often, we have to decide what these are.
+UCI Machine Learning repository is a famous place to find supervised
+learning datasets on all kinds of topics
+https://archive.ics.uci.edu/
+Truly one of the classic, foundational resources that drove a huge
+amount of ML research for the past few decades
+Instance = data points
+
+Artificial Neural Networks
+Current “champion” among machine learning methods for supervised
+learning
+But other methods are still used—Depends on the problem
+Inspired by how neurons in the brain integrate information and pass it
+along to other neurons
+Many differences between ANNs and real brain neurons and networks
+
+https://theconversation.com/were-told-ai-neural-networks-learn-the-way-humans-do-aneuroscientist-explains-why-thats-not-the-case-183993
+
+Neural networks
+
+4
+
+Multi-layer networks
+
+Multi layered perceptron (MLP)
+
+This network has
+1. two input nodes,
+2. one hidden layer with two nodes,
+3. one output node
+Nodes in the hidden layer can represent values that are based on, but
+different from, the inputs
+Hidden layers allow you to build more complex functions (i.e. more complex
+decision boundaries)
+
+Called ‘fully connected’ when everything is connected but it does not have to be
+
+Neural networks
+
+5
+
+Layers of neurons but all of them may not be connected to each other.
+
+AlexNet is a convolutional neural network architecture developed for
+image classification tasks
+
+CNN- (convolutional neural network) A CNN is composed of an input
+layer, an output layer, and many hidden layers in between. These layers
+perform operations that alter the data with the intent of learning features
+specific to the data.
+
+Very big and complex networks
+Good because they can represent very complex decision boundaries
+Bad because it is difficult to find a set of weights that will make the network
+do what you want.
+Every weight influences not just its own little node, but ALSO every other
+node that is somewhere downstream in the network
+
+Neural networks
+
+6
+
+So how to pick a good set of weights?
+Perceptron update rule: Iteratively tweak weights to reduce the error
+
+Fancier idea: Iteratively tweak weights to follow the slope of the error
+function
+
+Gradient descent—type of optimisation
+
+Neural networks
+
+7
+
+Gradient descent is a general optimisation algorithm
+Optimisation: Given an arbitrary function over some inputs, we want to find
+which inputs minimise (or maximise) the value of that function
+^^ Find the ‘x’ where ‘y’ is minimum/maximum
+An exhaustive search would be easy and effective.
+But what if you can’t conduct an exhaustive search?
+Hill climbing: Start at a random point, look at your neighbours, and go
+from there.
+The issue here is that the random start point that is chosen could
+impact the end point—may not end up at the global minimum/maximum
+but rather the local minimum/maximum
+Often works with enough starts
+Instead of looking at your neighbours, discretely, just look at which
+way the slope is pointing and go that way(?)
+How can we calculate the slope of a function?
+Take the derivative! i.e., the gradient (for a multivariable function
+Derivative- The rate of change of a function, or the slope of the
+tangent line at a particular point on a function
+
+Gradient descent
+Function you want to minimise: F
+Calculate the gradient: ∇F
+
+Neural networks
+
+8
+
+Wherever you are, just look at the value of ∇F at that point…
+Take a step in the direction -∇F
+Minus because we want to minimize the function F
+How big of a step?
+Learning rate η
+Step = η * -∇F
+
+Gradient descent for neural networks
+Think about the error of a neural network (y_true - y_pred)
+Error of a neural network- A function defined over (not over the inputs to
+the network, rather defined over—) the space of all possible weights
+If the error function is differentiable… then we can use gradient descent to
+try to adjust the weights in order to minimise the error
+
+Problem
+If the error function includes the step function, it is not differentiable!
+
+Solution: Smooth out the step function! “Sigmoid” function is a common
+one
+
+Gradient descent in a sigmoid neural network
+
+Neural networks
+
+9
+
+This whole thing is differentiable!
+And we can define the error so that it is easily differentiable too
+“Backpropagation” is a method for doing gradient descent where you
+repeatedly compute the derivative of the error function with respect to the
+weights, starting at the output layer and working your way ”backwards”
+through the network
+It is a way to do gradient descent by taking derivatives over and over
+and looking at how the erro changes throughout as a function of the
+weights.
+
+How much data to use to calculate error at each
+iteration?
+True gradient descent: Use all the data at every time step
+Get the most accurate idea of which way the slope is pointing, given ALL of
+our data
+Tough to compute, if we have a lot of data
+Stochastic (or “batch”) gradient descent: Use a random batch of the data at
+every time step
+Epoch – one pass through all of the training data
+Usually train over multiple epochs
+
+Play with a NN:
+https://playground.tensorflow.org/
+
+Neural networks
+
+10
+
+
