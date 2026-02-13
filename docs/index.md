@@ -31,6 +31,13 @@ I believe in making **simple**, **efficient** and **elegant** software solutions
 
 
 <div class="cards-container">
+<a href="../AIeducation">
+  <card 
+      image="/bss_25_logo.jpeg" 
+      title="AI and the Future of Education in India" 
+      description="Insights from the Bengaluru Skill Summit 2025 on how AI is accelerating the failure of India's education system, and what a new pedagogy built on competence over credentials could look like."
+    /></a>
+
 <a href="../Metacognition">
   <card 
       image="/metacog.png" 

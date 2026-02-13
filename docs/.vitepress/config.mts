@@ -52,8 +52,7 @@ export default defineConfig({
           { text: 'Art Of Visual Storytelling', link: '/artofvisualstorytelling' },
           { text: 'Knowledge Distillation', link: '/KnowledgeDistillation' },
           { text: 'Metacognition: The basis of good AI Interaction', link: '/Metacognition' },
-          { text: 'Insights on AI and education from the Bengaluru Skill Summit 2025', link: '/AIeducation' },
-          { text: 'Basics of AI', link: '/BasicsofAI' }
+          { text: 'AI and the Future of Education in India', link: '/AIeducation' },
         ]
       }
     ],

@@ -46,8 +46,8 @@ defineProps({
     height: auto;
     z-index: 0;
     border-radius: 8px;
-    object-fit: cover;
-    object-position: top;
+    object-fit: contain;
+    object-position: center;
 }
 
 .card-content {
